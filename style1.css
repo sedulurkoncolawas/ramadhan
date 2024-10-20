@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl1t45xT2d6RwD_7P1BWd3PEDA8Zc9C9Fwx5Z_tA55Iq6TQPHSKRjqabo&s=10') no-repeat center center/cover;
+    filter: brightness(0.4); /* Efek Gelap */
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Lapisan Overlay Gelap */
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    color: #fff; /* Ubah warna teks jadi putih biar lebih kontras */
+}
+
+h1 {
+    margin-bottom: 18px;
+    font-size: 3em;
+    color: #e0e0e0; /* Ubah warna heading */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #d3d3d3; /* Warna paragraf jadi lebih cerah */
+}
+
+.main-content {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.about, .history {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-in-out;
+    margin-top: 150px;
+    background: rgba(255, 255, 255, 0.1); /* Transparansi background */
+    padding: 50px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3); /* Shadow lebih gelap */
+    border-radius: 15px;
+    text-align: left;
+    backdrop-filter: blur(10px); /* Efek blur di background */
+}
+
+.about.active, .history.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about h2, .history h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6b81;
+    font-weight: bold;
+    position: relative;
+}
+
+.about h2::after, .history h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #ff6b81;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.about p, .history p {
+    font-size: 1.1em;
+    color: #f0f0f5;
+    line-height: 1.8;
+}
+
+.about {
+    margin-top: 300px;
+}
+
+.history {
+    margin-top: 200px;
+}
+
+.container section {
+    margin-bottom: 100px;
+}
+
+.main-content p {
+    font-size: 1.2em;
+    color: #f0f0f5;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-content p:hover {
+    color: #4a90e2;
+    transition: color 0.3s ease;
+}
+
+/* Responsive untuk layar yang lebih besar */
+@media (min-width: 1200px) {
+    .container {
+        padding: 100px; /* Menambah padding agar lebih lega di layar besar */
+    }
+
+    h1 {
+        font-size: 4em; /* Heading lebih besar di desktop */
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    .about, .history {
+        margin-top: 100px; /* Mengurangi margin agar elemen tidak terlalu jauh */
+    }
+}
+
+#countdown {
+    font-size: 1.5em;
+    color: #f0f0f5;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
